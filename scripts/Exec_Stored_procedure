@@ -1,0 +1,2 @@
+-- use stored procedure to run query in one go
+EXEC bronze.load_bronze
