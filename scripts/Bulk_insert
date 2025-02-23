@@ -2,7 +2,15 @@
 
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
+PRINT"=========================================================";
+PRINT 'Loading Bronze Layer';
+PRINT"=========================================================";
 
+PRINT'------------------------------------------------------------';
+PRINT'Loading CRM Tables';
+PRINT'------------------------------------------------------------';
+
+PRINT '>> Truncating Table: Bronze.crm_cust_info';
 TRUNCATE TABLE bronze.crm_cust_info;
 
 BULK INSERT bronze.crm_cust_info
@@ -54,6 +62,11 @@ WITH (
   FIELDTERMINATOR =',',
   TABLOCK
   );
+
+PRINT'------------------------------------------------------------';
+PRINT'Loading ERP Tables';
+PRINT'------------------------------------------------------------';
+
 TRUNCATE TABLE bronze.crm_cust_info;
 
 BULK INSERT bronze.crm_cust_info
